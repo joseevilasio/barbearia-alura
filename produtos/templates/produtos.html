@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    {% include 'partials/_header.html' %}
+        <main>
+            
+            <ul class="produto">
+                {% if produtos %}
+                {% for produto in produtos %}
+                <li>
+                    <h2>{{ produto.nome_produto }}</h2>
+                    <img src="media\{{ produto.foto_produto }}">
+                    <p class="produto-descricao">{{ produto.descricao_produto }}</p>
+                    <p class="produto-preco">R$ {{ produto.preco_produto }}</p>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+            
+        </main>
+        
+    {% include 'partials/_footer.html' %}
+{% endblock %}

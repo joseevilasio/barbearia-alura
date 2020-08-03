@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Barbearia Alura</title>
+        <link rel="stylesheet" href="{% static 'reset.css'%}">        
+        <link rel="stylesheet" href="{% static 'site.css'%}">       
+    </head>
+
+    <!-- Favicon -->
+    <link rel="icon" href=" {% static 'favicon.ico' %} ">  
+
+    <body>
+        
+        {% block content %} {% endblock %}
+        
+    </body>
+</html>

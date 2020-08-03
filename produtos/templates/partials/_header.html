@@ -1,0 +1,14 @@
+{% load static %}
+
+<header>
+    <div class="caixa-header">
+        <h1> <img src="{% static 'logo.png'%}" alt="Logo da Barbearia Alura"> </h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'produtos' %}">Produtos</a></li>
+                <li><a href="{% url 'contatos' %}"> Contato</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
