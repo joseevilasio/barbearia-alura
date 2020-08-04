@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 class Produto(models.Model):
     nome_produto = models.CharField(max_length=200)
@@ -18,5 +19,9 @@ class Contatos(models.Model):
     contato = models.CharField(max_length=10)
     turno_atendimento = models.CharField(max_length=10)
     newsletter = models.BooleanField(default=False)
+    data_envio = models.DateTimeField(default=datetime.now(), blank=True)
+
+    def __str__(self):
+        return f'{self.nome} - {self.data_envio}'
 
 

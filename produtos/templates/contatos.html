@@ -4,7 +4,7 @@
 
     {% include 'partials/_header.html' %}
         <main class="main-contato">
-            <form action="" method="POST">
+            <form action="{% url 'contatos' %}" method="POST">
                 {% csrf_token %}
 
                 <label for="nomesobrenome">Nome e Sobrenome</label>

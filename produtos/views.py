@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Produto
+from .models import Produto, Contatos
 
 # Create your views here.
 
@@ -19,4 +19,22 @@ def produtos(request):
     return render(request, 'produtos.html', dados)
 
 def contatos(request):
-    return render(request, 'contatos.html')
+    if request.method == 'POST':
+        form = Contatos()
+        form.nome = request.POST['nome']
+        form.email = request.POST['email']
+        form.telefone = request.POST['telefone']
+        form.mensagem = request.POST['mensagem']
+        form.contato = request.POST['contato']
+        form.turno_atendimento = request.POST['turno_atendimento']
+        
+        if request.POST['newsletter'] == "on":
+            form.newsletter = True
+        else:
+            form.newsletter = False
+
+        form.save()
+        
+        return redirect('index')
+    else:
+        return render(request, 'contatos.html')
