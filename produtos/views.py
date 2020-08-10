@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Produto, Contatos
+from django.contrib import messages
 
-# Create your views here.
 
 
 def index(request):    
@@ -34,7 +34,8 @@ def contatos(request):
             form.newsletter = False
 
         form.save()
+        messages.success(request,'Mensagem enviada com sucesso!')
+        return redirect('contatos')        
         
-        return redirect('index')
     else:
         return render(request, 'contatos.html')

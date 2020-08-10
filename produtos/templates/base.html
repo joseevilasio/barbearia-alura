@@ -5,16 +5,18 @@
 
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
         <title>Barbearia Alura</title>
-        <link rel="stylesheet" href="{% static 'reset.css'%}">        
-        <link rel="stylesheet" href="{% static 'site.css'%}">       
+        <link rel="stylesheet" href="{% static 'reset.css' %}">        
+        <link rel="stylesheet" href="{% static 'site.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">      
     </head>
 
     <!-- Favicon -->
-    <link rel="icon" href=" {% static 'favicon.ico' %} ">  
+    <link rel="icon" href="{% static 'favicon.ico' %}">  
 
     <body>
-        
+        <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
         {% block content %} {% endblock %}
         
     </body>

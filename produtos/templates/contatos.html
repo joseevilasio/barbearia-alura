@@ -7,6 +7,8 @@
             <form action="{% url 'contatos' %}" method="POST">
                 {% csrf_token %}
 
+                {% include 'partials/_alertas.html' %}
+
                 <label for="nomesobrenome">Nome e Sobrenome</label>
                 <input type="text" id="nomesobrenome" class="input-padrao" name="nome" required>
 
